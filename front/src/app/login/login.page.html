@@ -1,0 +1,48 @@
+<ion-grid>
+	<ion-row justify-content-center>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <img src="https://image.flaticon.com/icons/png/512/149/149071.png" style="width: 37%; margin-left: 34%;">
+            </div>
+            <h3> <img src="../../assets/image/img1.png" style="width: 100px; height: 30px;"/> BIENVENIDO!</h3>
+            <strong> <p>Iniciar sesión</p></strong>
+        </div>
+        <div class="body">
+            <ion-list>
+                <form class="needs-validation" (ngSubmit)="login(form)" #form="ngForm">
+                    <div class="form-group" padding>
+                        <ion-item>
+                            <ion-input class="form-control" [(ngModel)]="usuario.strCorreo" type="email"
+                                placeholder="Correo electronico" name="strCorreo" #strCorreo="ngModel"
+                                [ngClass]="{ 'is-invalid': !strCorreo.valid && strCorreo.touched,'is-valid': strCorreo.valid}"
+                                required></ion-input>
+                        </ion-item>
+                        <br>
+                    </div>
+                    <div class="form-group" padding>
+                        <ion-item>
+                            <ion-input class="form-control" [(ngModel)]="usuario.strPassword" maxlength="30"
+                                type="password" name="strPassword" #strPassword="ngModel"
+                                [ngClass]="{ 'is-invalid': !strPassword.valid && strPassword.touched,'is-valid': strPassword.valid}"
+                                required placeholder="Contraseña"></ion-input>
+                        </ion-item>
+                    </div>
+                    <br>
+    
+                    <div padding>
+                        <ion-button size="large" expand="block" type="submit" [disabled]="!form.valid">Iniciar sesion
+                        </ion-button>
+                    </div>
+                    <br>
+                    <div padding>
+                        <ion-button size="large" expand="block" (click)="registrar()">Registrarse
+
+                        </ion-button>
+                    </div>
+                </form>
+            </ion-list>
+        </div>
+    </div>
+    </ion-row>
+</ion-grid>

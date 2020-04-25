@@ -1,0 +1,49 @@
+<ion-grid>
+  <ion-row>
+    <div class="container">
+      <div class="header">
+        <h3> <img src="../../assets/image/img1.png" style="width: 100px; height: 30px;"/> AGREGAR PRODUCTO!</h3>
+      </div>
+      <div class="body">
+        <ion-list>
+          <form (ngSubmit)="registrarProducto(forma)" #forma="ngForm">
+            <div class="form-group" padding>
+                <ion-item>
+              <ion-input class="form-control" id="validationServer01" name="img"
+                [(ngModel)]="producto.img" #img="ngModel" required type="text"
+                placeholder="imagen"></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-input class="form-control" id="validationServer02" name="nombre"
+                [(ngModel)]="producto.nombre" #nombre="ngModel" required type="text"
+                placeholder="Nombre del producto"></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-input class="form-control" id="validationServer03" name="codigo"
+                [(ngModel)]="producto.codigo" #codigo="ngModel" required type="text"
+                *ngIf="datoscaneado">{{ datoscaneado["text"] }}</ion-input>
+                
+                  <ion-button expand="block" color="success" (click)="LeerCode()">Scannear</ion-button>
+                </ion-item>
+            <br>
+            <ion-item>
+              <ion-input class="form-control" id="validationServer04" name="descripcion"
+                [(ngModel)]="producto.descripcion" #descripcion="ngModel" required type="Email"
+                placeholder="Descripcion del producto"></ion-input>
+            </ion-item>
+           
+            <br>
+          </div>
+          <br>
+          <div padding>
+            <ion-button size="large" expand="block" type="submit" [disabled]="!forma.valid">Registrar
+            </ion-button>
+                </div>
+        </form>
+        </ion-list>
+      </div>
+    </div>
+  </ion-row>
+</ion-grid>

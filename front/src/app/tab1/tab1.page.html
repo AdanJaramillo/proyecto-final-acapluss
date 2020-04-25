@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <img src="../../assets/image/img1.png" style="width: 100px; height: 30px;"/> PRODUCTOS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <button class="btn btn-primary pull-right" (click)="getProducts()">
+    Refrescar
+  </button>
+  <h3 color="secondary">Productos</h3>
+
+  <ion-card *ngFor="let item of productos">
+      <ion-card-header>
+        <ion-label color="primary">ID</ion-label>
+          <ion-card-subtitle>{{item._id}}</ion-card-subtitle>
+
+          <ion-label color="primary">Nombre</ion-label>
+          <ion-input name="nombre" [(ngModel)]="item.nombre" #nombre="ngModel"></ion-input>
+
+          <ion-label color="primary">CODIGO</ion-label>
+          <ion-card-subtitle>{{item.codigo}}</ion-card-subtitle>
+
+          <ion-label color="primary">DESCRIPCION</ion-label>
+          <ion-input name="descripcion" [(ngModel)]="item.descripcion" #descripcion="ngModel"></ion-input>
+
+          <ion-button style="float: right;" color="danger" (click)="eliminar(item._id)">Eliminar</ion-button>
+      </ion-card-header>
+  </ion-card>
+
+
+
+</ion-content>

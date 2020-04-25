@@ -1,0 +1,55 @@
+<ion-grid>
+	<ion-row justify-content-center>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <img src="https://image.flaticon.com/icons/png/512/149/149071.png" style="width: 27%; margin-left: 24%;">
+            </div>
+            <h3> <img src="../../assets/image/img1.png" style="width: 100px; height: 30px;"/> Registrar!</h3>
+        </div>
+        <div class="body">
+            <ion-list>
+	<form (ngSubmit)="registrarUsuario(forma)" #forma="ngForm">
+        <div class="form-group" padding>
+            <ion-item>
+					<ion-input class="form-control" id="validationServer01" name="strNombre"
+						[(ngModel)]="usuario.strNombre" #strNombre="ngModel" required type="text"
+						placeholder="Nombre"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input class="form-control" id="validationServer02" name="strApellidoPat"
+						[(ngModel)]="usuario.strApellidoPat" #strApellidoPat="ngModel" required type="text"
+						placeholder="Apellido paterno"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input class="form-control" id="validationServer03" name="strApellidoMat"
+						[(ngModel)]="usuario.strApellidoMat" #strApellidoMat="ngModel" required type="text"
+						placeholder="Apellido materno"></ion-input>
+				</ion-item>
+				<br>
+				<ion-item>
+					<ion-input class="form-control" id="validationServer04" name="strCorreo"
+						[(ngModel)]="usuario.strCorreo" #strCorreo="ngModel" required type="Email"
+						placeholder="Correo Electronico"></ion-input>
+				</ion-item>
+				<br>
+				
+				<ion-item>
+					<ion-input class="form-control" id="validationServer05" name="strPassword"
+						[(ngModel)]="usuario.strPassword" #strPassword="ngModel" required type="password"
+						placeholder="Contraseña"></ion-input>
+				</ion-item>
+			</div>
+			<br>
+			<div padding>
+				<ion-button size="large" expand="block" type="submit" [disabled]="!forma.valid">Registrar
+				</ion-button>
+            </div>
+    </form>
+            </ion-list>
+        </div>
+    </div>
+    </ion-row>
+</ion-grid>
